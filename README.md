@@ -11,7 +11,7 @@
 <h2>Hello, I'm Mattis DALLEAU</h2>
 
 ![GitHub followers](https://img.shields.io/github/followers/Heliferepo?label=Follow&style=social)
-![Profile Views](http://img.shields.io/badge/Profile%20Views-192-blue)
+
 
 [<img align="left" alt="Heliferepo | Github" width="22px" src="https://image.flaticon.com/icons/svg/733/733553.svg" />][github]
 [<img align="left" alt="Heliferepo | Email" width="22px" src="https://image.flaticon.com/icons/svg/732/732200.svg" />][gmail]
@@ -20,7 +20,7 @@
 </br>
 </br>
 
-<img align='right' src="https://i.pinimg.com/originals/30/23/83/302383c530b39f5a65f11b4ef986e3ce.gif" width="450">**About me :**
+<img align='right' src="https://i.pinimg.com/originals/30/23/83/302383c530b39f5a65f11b4ef986e3ce.gif" width="400">**About me :**
 
 - ✨ I'm a student willing to become a software engineer
 - 📘 Currently I am a student at [@Epitech](https://www.epitech.eu/)
@@ -35,7 +35,13 @@
 **I am a Linux enthusiast :**
 - 💻 I made a custom Iso for arch : [download it here](https://files.norech.com/iso/nolife/whythis/WhyThis_1.0-2020.08.03-x86_64.iso) or check the source code below
 
-[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=Heliferepo&repo=whythis.iso)](https://github.com/Heliferepo/whythis.iso)
+[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=Heliferepo&repo=whythis.iso&theme=buefy&hide_border=true)](https://github.com/Heliferepo/whythis.iso)
+
+- 🌁 Some useful shell scripts
+
+> Scripts are going to be downloadable with curl like that `curl -LO helife.digital/scripts/filename` go take a look at it
+
+[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=Heliferepo&repo=mattisdalleau.github.io&theme=buefy&hide_border=true)](https://github.com/Heliferepo/mattisdalleau.github.io)
 
 - 🌍 I also intend to become the first maintainer of a Arch mirror at Reunion Island in the few months
 - 💾 If you want me to work on a UNIX / Linux tty I can do so (as long as I have vim to edit text)</br>
@@ -61,13 +67,13 @@
 
 **My GitHub Data :** 
 
-> 🏆 +686 Contributions in year 2020 
+> 🏆 +669 Contributions in year 2020 
  > 
 > 💼 Opted to Hire
  > 
-> 📜 9 Public Repositories 
+> 📜 10 Public Repositories 
  > 
-> 🔑 12 Owned Private Repositories 
+> 🔑 11 Owned Private Repositories 
  >
 > 📝 Added and deleted approximately 600.000 lines of code since I started Github
  >
@@ -75,10 +81,10 @@
 
 <div style="-webkit-column-count: 2; -moz-column-count: 2; column-count: 2; -webkit-column-rule: 1px dotted #e0e0e0; -moz-column-rule: 1px dotted #e0e0e0; column-rule: 1px dotted #e0e0e0;">
     <div style="display: inline-block;">
-        <img width="450" height="150" img align="left" alt="Harm's Github Stats" src="https://github-readme-stats.vercel.app/api?username=Heliferepo&theme=buefy&show_icons=true&count_private=true&hide_border=true&hide=issues" class="responsive" />
+        <img width="450" height="150" img align="left" alt="Harm's Github Stats" src="https://github-readme-stats.vercel.app/api?username=Heliferepo&theme=buefy&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&hide=issues" class="responsive" />
     </div>
     <div style="display: inline-block;">
-        <img width="350" height="150" img align="center" alt="Harm's TopLang" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Heliferepo&theme=buefy&hide_border=true&layout=compact&count_private=true" class="responsive"/>
+        <img width="350" height="150" img align="center" alt="Harm's TopLang" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Heliferepo&theme=buefy&hide_border=true&layout=compact&count_private=true&hide=html, css, perl" class="responsive"/>
     </div>
 </div>
 <br/>
