@@ -7,25 +7,7 @@ then
 fi
 
 HOME_PATH=$HOME
-FILES=.config .fonts .urxvt .Xressources .bashrc .zshrc .vimrc
-
-ask() {
-    local prompt default reply
-    prompt="y/n"
-    default="y"
-    while true; do
-        echo -n "$1 [$prompt] "
-        read reply </dev/tty
-        if [ -z "$reply" ]; then
-            reply=$default
-        fi
-        case "$reply" in
-            Y*|y*) return 0 ;;
-            N*|n*) return 1 ;;
-            *) echo "Please type [Y]es or [N]o"
-        esac
-    done
-}
+FILES=".config .fonts .urxvt .Xressources .bashrc .zshrc .vimrc"
 
 install_zsh() {
 	echo "Installing zsh"
@@ -41,7 +23,16 @@ install_zsh() {
 
 install_dependencies() {
 	echo "Installing the dependencies"
-	sudo dnf install libxcb-devel xcb-util-keysyms-devel xcb-util-devel xcb-util-wm-devel xcb-util-xrm-devel yajl-devel libXrandr-devel startup-notification-devel libev-devel xcb-util-cursor-devel libXinerama-devel libxkbcommon-devel libxkbcommon-x11-devel pcre-devel pango-devel git gcc automake i3status i3lock polybar rofi git xbacklight dunst acpi mpd mpc dnsutils bmon nm-connection-editor firefox scrot maim viewnior zip unzip lxmusic vim firefox discord rxvt-unicode neofetch
+	sudo dnf install libxcb-devel xcb-util-keysyms-devel 
+	sudo dnf install xcb-util-devel xcb-util-wm-devel 
+	sudo dnf install xcb-util-xrm-devel yajl-devel libXrandr-devel
+	sudo dnf install startup-notification-devel libev-devel 
+	sudo dnf install xcb-util-cursor-devel libXinerama-devel 
+	sudo dnf install libxkbcommon-devel libxkbcommon-x11-devel pcre-devel
+	sudo dnf install pango-devel gcc automake i3status i3lock polybar
+	sudo dnf install rofi git xbacklight dunst acpi mpc dnsutils bmon
+	sudo dnf install nm-connection-editor firefox scrot maim viewnior
+	sudo dnf install zip unzip lxmusic vim firefox rxvt-unicode neofetch
 }
 
 install_config() {
@@ -99,12 +90,10 @@ clean_folders() {
 	rm -rf dotfiles
 }
 
-if ask "Are you sure that you want to get my fedora_voidrice this will erase your own configurations files so make sure to make a backup" || (echo -e "\nExiting ..." && exit)
-
-if ask "Do you want to install zsh ?" && install_zsh
-if ask "Do you want to install dependencies ?" && install_dependencies
-if ask "Do you want to get Helife's dotfiles ?" && install_config
-if ask "Do you want to install i3-gaps ?" && install_i3_gaps
-
+install_dependencies
+install_zsh
+install_config
+install_i3_gaps
+clean_folders
 
 clear && neofetch && echo "Success"
