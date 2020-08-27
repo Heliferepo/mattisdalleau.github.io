@@ -27,7 +27,7 @@ install_dependencies() {
 	sudo dnf install xcb-util-devel xcb-util-wm-devel 
 	sudo dnf install xcb-util-xrm-devel yajl-devel libXrandr-devel
 	sudo dnf install startup-notification-devel libev-devel 
-	sudo dnf install xcb-util-cursor-devel libXinerama-devel 
+	sudo dnf install xcb-util-cursor-devel libXinerama-devel nitrogen
 	sudo dnf install libxkbcommon-devel libxkbcommon-x11-devel pcre-devel
 	sudo dnf install pango-devel gcc automake i3status i3lock polybar
 	sudo dnf install rofi git xbacklight dunst acpi mpc dnsutils bmon
