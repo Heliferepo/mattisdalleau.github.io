@@ -17,7 +17,7 @@ check_fedora_version() {
 
 check_git() {
         if [ ! -f "/usr/bin/git" ]; then
-                sudo dnf install git
+                sudo dnf install git -y
                 if [ ! -f "/usr/bin/git" ]; then
                         echo "Could not install git"
                         exit 1
