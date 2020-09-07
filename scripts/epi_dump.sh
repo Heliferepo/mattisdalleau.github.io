@@ -41,11 +41,26 @@ download_dump() {
         sudo sh install_packages_dump.sh
 }
 
+repair_docker() {
+        sudo dnf remove docker-* -y
+        sudo dnf config-manager --disable docker-* -y
+        sudo grubby --update-kernel=ALL --args="systemd.unified_cgroup_hierarchy=0"
+        sudo firewall-cmd --permanent --zone=trusted --add-interface=docker0
+        sudo firewall-cmd --permanent --zone=FedoraWorkstation --add-masquerade
+        sudo dnf install moby-engine docker-compose
+        sudo systemctl enable docker
+        sudo systemctl reboot
+        sudo docker run hello-world
+        sudo groupadd docker
+        sudo usermod -aG docker $USER
+}
+        
 main() {
         check_sudo_privileges
         check_fedora_version
         check_git
         download_dump
+        repair_docker
 }
 
 main
