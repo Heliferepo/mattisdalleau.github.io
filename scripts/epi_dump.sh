@@ -10,7 +10,7 @@ check_sudo_privileges() {
 check_fedora_version() {
         cat /etc/fedora-release | grep "Fedora release 32"
         if [[ $? -ne 0 ]]; then
-                echo "You nedd to run this script on Fedora 32"
+                echo "You need to run this script on Fedora 32"
                 exit 1
         fi
 }
