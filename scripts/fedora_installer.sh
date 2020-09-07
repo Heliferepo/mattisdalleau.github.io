@@ -23,16 +23,16 @@ install_zsh() {
 
 install_dependencies() {
 	echo "Installing the dependencies"
-	sudo dnf install libxcb-devel xcb-util-keysyms-devel 
-	sudo dnf install xcb-util-devel xcb-util-wm-devel 
-	sudo dnf install xcb-util-xrm-devel yajl-devel libXrandr-devel
-	sudo dnf install startup-notification-devel libev-devel 
-	sudo dnf install xcb-util-cursor-devel libXinerama-devel nitrogen
-	sudo dnf install libxkbcommon-devel libxkbcommon-x11-devel pcre-devel
-	sudo dnf install pango-devel gcc automake i3status i3lock polybar
-	sudo dnf install rofi git xbacklight dunst acpi mpc dnsutils bmon
-	sudo dnf install nm-connection-editor firefox scrot maim viewnior
-	sudo dnf install zip unzip lxmusic vim firefox rxvt-unicode neofetch
+	sudo dnf install libxcb-devel xcb-util-keysyms-devel -y
+	sudo dnf install xcb-util-devel xcb-util-wm-devel -y
+	sudo dnf install xcb-util-xrm-devel yajl-devel libXrandr-devel -y
+	sudo dnf install startup-notification-devel libev-devel -y
+	sudo dnf install xcb-util-cursor-devel libXinerama-devel nitrogen -y
+	sudo dnf install libxkbcommon-devel libxkbcommon-x11-devel pcre-devel -y
+	sudo dnf install pango-devel gcc automake i3status i3lock polybar -y
+	sudo dnf install rofi git xbacklight dunst acpi mpc dnsutils bmon -y
+	sudo dnf install nm-connection-editor firefox scrot maim viewnior -y
+	sudo dnf install zip unzip lxmusic vim firefox rxvt-unicode neofetch -y
 }
 
 install_config() {
