@@ -2,7 +2,7 @@
 
 check_sudo_privileges() {
         if [[ $EUID -ne 0 ]]; then
-                echo "This script must be runned as root:
+                echo "This script must be runned as root"
                 exit 1
         fi
 }
