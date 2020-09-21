@@ -15,52 +15,35 @@ check_fedora_version() {
         fi
 }
 
-check_git() {
-        if [ ! -f "/usr/bin/git" ]; then
-                sudo dnf install git -y
-                if [ ! -f "/usr/bin/git" ]; then
-                        echo "Could not install git"
-                        exit 1
-                fi
-        fi
-}
-
-check_repo() {
-        if [ ! -d "dump" ]; then
-                echo "Could not clone repository"
+check_deps() {
+        sudo dnf install git gcc g++ make cmake emacs-nox -y
+        
+        if [[ $? -ne 0 ]]; then
+                echo "Some dependecies download might have failed aborting..."
                 exit 1
         fi
 }
 
-download_dump() {
+download_dump_manager() {
         cd /tmp
-        git clone https://github.com/epitech/dump dump
-        check_repo
-        cd dump
-        chmod +x install_packages_dump.sh
-        sudo sh install_packages_dump.sh
-}
-
-repair_docker() {
-        sudo dnf remove docker-* -y
-        sudo dnf config-manager --disable docker-* -y
-        sudo grubby --update-kernel=ALL --args="systemd.unified_cgroup_hierarchy=0"
-        sudo firewall-cmd --permanent --zone=trusted --add-interface=docker0
-        sudo firewall-cmd --permanent --zone=FedoraWorkstation --add-masquerade
-        sudo dnf install moby-engine docker-compose
-        sudo systemctl enable docker
-        sudo systemctl reboot
-        sudo docker run hello-world
-        sudo groupadd docker
-        sudo usermod -aG docker $USER
+        git clone https://github.com/eHeliferepo/epidump_manager manager
+        if [ ! -d "manager" ]; then
+                echo "Could not clone repository"
+                exit 1
+        fi
+        cd manager
+        chmod +x install.sh
+        sudo sh install.sh
+        epidump_manager -d && epidump -a && epidump -sfde
+        #Plusieurs fois au cas ou de toute facon apres avoir installé tout le plus c'est la sfml et le epitech-emacs
+        #aka -s et -e
 }
         
 main() {
         check_sudo_privileges
         check_fedora_version
-        check_git
-        download_dump
-        repair_docker
+        check_deps
+        download_dump_manager
 }
 
 main
