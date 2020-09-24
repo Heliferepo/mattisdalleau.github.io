@@ -26,7 +26,7 @@ check_deps() {
 
 download_dump_manager() {
         cd /tmp
-        git clone https://github.com/eHeliferepo/epidump_manager manager
+        git clone https://github.com/Heliferepo/epidump_manager manager
         if [ ! -d "manager" ]; then
                 echo "Could not clone repository"
                 exit 1
