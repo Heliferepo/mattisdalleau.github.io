@@ -26,12 +26,18 @@ check_deps() {
 
 download_dump_manager() {
         cd /tmp
-        git clone https://github.com/Heliferepo/epidump_manager manager
-        if [ ! -d "manager" ]; then
-                echo "Could not clone repository"
-                exit 1
+        if [ -d "manager" ]; then
+                cd manager
+                git pull
+        else 
+                git clone https://github.com/Heliferepo/epidump_manager manager
+                if [ ! -d "manager" ]; then
+                        echo "Could not clone repository"
+                        exit 1
+                fi
+                cd manager
         fi
-        cd manager
+
         chmod +x install.sh
         sudo sh install.sh
         epidump_manager -d && epidump_manager -a && epidump_manager -sde
