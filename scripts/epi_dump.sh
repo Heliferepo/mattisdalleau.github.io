@@ -40,7 +40,7 @@ download_dump_manager() {
 
         chmod +x install.sh
         sudo sh install.sh
-        epidump_manager -d && epidump_manager -a && epidump_manager -sde
+        epidump_manager -d && epidump_manager -scde
         #Plusieurs fois au cas ou de toute facon apres avoir installé tout le plus c'est la sfml et le epitech-emacs
         #aka -s et -e
 }
