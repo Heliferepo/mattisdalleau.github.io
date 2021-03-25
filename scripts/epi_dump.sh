@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/usr/bin/bash
 
 check_sudo_privileges() {
         if [[ $EUID -ne 0 ]]; then
